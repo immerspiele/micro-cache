@@ -2,7 +2,15 @@
   "name": "@immerspiele/micro-cache",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs"
+    }
+  },
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -10,10 +18,13 @@
   "files": [
     "/dist"
   ],
-  "devDependencies": {
-    "typescript": "^5.1.6"
-  },
   "scripts": {
-    "build": "tsc"
+    "build": "tsup",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "tsup": "^8.3.5",
+    "vitest": "^2.1.8"
   }
 }
