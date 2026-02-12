@@ -10,10 +10,13 @@
   "files": [
     "/dist"
   ],
-  "devDependencies": {
-    "typescript": "^5.1.6"
-  },
   "scripts": {
-    "build": "tsc"
+    "build": "tsdown",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
+    "tsdown": "^0.20.3",
+    "vitest": "^4.0.18"
   }
 }
